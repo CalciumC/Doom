@@ -70,6 +70,7 @@ public class Game {
 	public void meet(Player requester, Player target){
 		//ask target to accept or not
 		//if yes trade or team
+		//trade() or team()
 		
 	}
 	
