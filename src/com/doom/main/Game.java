@@ -73,9 +73,19 @@ public class Game {
 		
 	}
 	
-	public void trace(Player requester, Player target){}
+	public boolean trace(Player requester, Player target, EventCard event){
+		boolean result = false;
+		//get requester trace stats
+		//get event trace buffs
+		//if requester trace + event trace buffs + roll dice > 5 --> return true
+		//else false
+		return result;
+	}
 	
-	public void trade(){}
+	public void trade(Player requester, Player target){
+		
+		
+	}
 	
 	public void encounter(Player requester){
 		//draw card from Event deck
