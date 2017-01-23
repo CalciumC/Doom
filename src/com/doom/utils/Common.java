@@ -24,5 +24,13 @@ public class Common {
 		
 		return str;
 	}
+	
+	public Integer getSum(Integer[] intArray){
+		Integer sum = 0;
+		for(Integer i: intArray){
+			sum = sum + i;
+		}
+		return sum;
+	}
 
 }
