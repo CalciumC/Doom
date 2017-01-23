@@ -5,8 +5,10 @@ import java.util.ArrayList;
 import com.doom.cards.EventCard;
 import com.doom.cards.ItemCard;
 import com.doom.cards.RoleCard;
+import com.doom.flags.CardFlags;
+import com.doom.flags.GameFlags;
 import com.doom.player.Player;
-import com.doom.utils.Flags;
+import com.doom.utils.Common;
 
 public class Game {
 
@@ -18,14 +20,16 @@ public class Game {
 	private Integer roundCounter;
 	private Integer phaseCounter;
 	
+	private Common common = Common.getInstance();
+	
 	public Game() {
 		this.players = new ArrayList<Player>();
 		this.roleDeck = new ArrayList<RoleCard>();
 		this.itemDeck = new ArrayList<ItemCard>();
 		this.eventDeck = new ArrayList<EventCard>();
 		
-		this.roundCounter = Flags.GAME_ROUNDS_LIMIT;
-		this.phaseCounter = Flags.GAME_PHASES_LIMIT;
+		this.roundCounter = GameFlags.GAME_ROUNDS_LIMIT;
+		this.phaseCounter = GameFlags.GAME_PHASES_LIMIT;
 		
 		initRoleDeck();
 		initItemDeck();
@@ -95,7 +99,8 @@ public class Game {
 	public void newTeam(Player leader){
 		
 		//add random string as team name to leader
-		//return the leader
+		String teamname = common.getRandomString(10);
+		leader.setTeam(teamname);
 		
 
 	}
@@ -113,7 +118,7 @@ public class Game {
 		roundCounter--;
 		if(roundCounter == 0){
 			endPhase();
-			roundCounter = Flags.GAME_ROUNDS_LIMIT;
+			roundCounter = GameFlags.GAME_ROUNDS_LIMIT;
 		}else{
 			randomOrder();
 		}
