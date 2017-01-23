@@ -147,4 +147,18 @@ public class Game {
 	}
 	
 	public void doom(){}
+	
+	private boolean isTeam(Player requester, Player target){
+		
+		String requesterTeam = requester.getTeam();
+		String targetTeam = target.getTeam();
+		
+		if("".equals(requesterTeam) || "".equals(targetTeam)){
+			return false;
+		}else if(!requesterTeam.equals(targetTeam)){
+			return false;
+		}
+		return true;
+		
+	}
 }
