@@ -16,5 +16,10 @@ public class CardFlags {
 	public final static String DOOM_TYPE_HEAVEN = "H";
 	public final static String DOOM_TYPE_DOOM = "D";
 	public final static String DOOM_TYPE_TEAM = "T";
+	
+	public final static String CARD_TYPE_ROLE = "Role";
+	public final static String CARD_TYPE_ITEM = "Item";
+	public final static String CARD_TYPE_EVENT = "Event";
+	public final static String CARD_TYPE_DOOM = "Doom";
 
 }
