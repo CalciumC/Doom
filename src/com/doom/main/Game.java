@@ -2,6 +2,7 @@ package com.doom.main;
 
 import java.util.ArrayList;
 
+import com.doom.cards.Card;
 import com.doom.cards.EventCard;
 import com.doom.cards.ItemCard;
 import com.doom.cards.RoleCard;
@@ -135,6 +136,7 @@ public class Game {
 	public void endPhase(){
 		phaseCounter--;
 		
+		//TODO Play a FOOD card to pass the phase
 		//check player if contains food.
 		//for each player? 
 		//if no food --> die
@@ -160,5 +162,44 @@ public class Game {
 		}
 		return true;
 		
+	}
+	
+	public void drawCard(Player player, String deck){
+		Card drawnCard;
+		switch(deck){
+		case CardFlags.CARD_TYPE_ROLE:
+			drawnCard = drawRoleCard();
+			break;
+		case CardFlags.CARD_TYPE_ITEM:
+			drawnCard = drawItemCard();
+			break;
+		case CardFlags.CARD_TYPE_EVENT:
+			drawnCard = drawEventCard();
+			break;
+		case CardFlags.CARD_TYPE_DOOM:
+			drawnCard = drawDoomCard();
+			break;
+		}
+		
+		//TODO add card to hand
+	}
+	
+	private Card drawRoleCard(){
+		//TODO Draw card mechanism 
+		return null;
+	}
+	
+	private Card drawItemCard(){
+		//TODO Draw card mechanism 
+		return null;
+	}
+	private Card drawEventCard(){
+		//TODO Draw card mechanism 
+		return null;
+	}
+	
+	private Card drawDoomCard(){
+		//TODO Draw card mechanism 
+		return null;
 	}
 }
