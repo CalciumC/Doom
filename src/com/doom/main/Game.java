@@ -38,18 +38,18 @@ public class Game {
 	
 	public void initRoleDeck(){
 		//read card details.
-		//csv? 
-		
+		//load csv? 
+		// ArrayList = loadCard(Roles)
 	}
 	
 	public void initItemDeck(){
 		//read card details.
-		//csv? 
+		//load csv? 
 	}
 	
 	public void initEventDeck(){
 		//read card details.
-		//csv? 
+		//load csv? 
 	}
 	
 	public void addPlayer(Player player){

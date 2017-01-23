@@ -1,5 +1,7 @@
 package com.doom.utils;
 
+import java.util.ArrayList;
+
 public class Common {
 	
 	private static final Common instance = new Common();
@@ -33,6 +35,14 @@ public class Common {
 		return sum;
 	}
 	
+	public ArrayList<String[]> loadCard(){
+		//TODO Load cards from CSV? 
+		//read each row as String[] 
+		//save to arrayList
+		//return
+		return null;
+		
+	}
 	
 
 }
