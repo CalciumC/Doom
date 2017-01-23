@@ -108,8 +108,15 @@ public class Game {
 	public void team(Player leader, Player teammate){
 		
 		//copy the team name from leader to teammate 
+		String team = leader.getTeam();
+		
 		//if team = null, newTeam(leader)
-		//return teammate
+		if("".equals(team)){
+			newTeam(leader);
+			team = leader.getTeam();
+		}
+		
+		teammate.setTeam(team);
 		
 
 	}
