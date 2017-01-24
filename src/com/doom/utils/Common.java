@@ -13,7 +13,7 @@ public class Common {
 	public static Common getInstance(){
 		return instance;
 	}
-	
+	 
 	public String getRandomString(int length){
 		String ABC = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
 		char[] outputChar = new char[length];
