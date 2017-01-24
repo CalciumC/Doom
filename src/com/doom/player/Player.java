@@ -13,12 +13,22 @@ public class Player {
 	private Integer seat;
 	private boolean alive;
 	private String team;
+	private String name;
 	
 	public Player() {
 		this.hand = new ArrayList<Card>();
 		this.board = new ArrayList<Card>();
 		this.alive = true;
 		this.team = "";
+		this.name = "";
+	}
+	
+	public Player(String name){
+		this.hand = new ArrayList<Card>();
+		this.board = new ArrayList<Card>();
+		this.alive = true;
+		this.team = "";
+		this.name = name;
 	}
 	
 	
