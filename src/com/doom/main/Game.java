@@ -12,7 +12,9 @@ import com.doom.player.Player;
 import com.doom.utils.Common;
 
 public class Game {
-
+	
+	private static Game game = null;
+	
 	private ArrayList<Player> players;
 	private ArrayList<RoleCard> roleDeck;
 	private ArrayList<ItemCard> itemDeck;
@@ -23,7 +25,14 @@ public class Game {
 	
 	private Common common = Common.getInstance();
 	
-	public Game() {
+	public static Game getInstance(){
+		if(game == null){
+			game = new Game();
+		}
+		return game;
+	}
+	
+	private Game() {
 		this.players = new ArrayList<Player>();
 		this.roleDeck = new ArrayList<RoleCard>();
 		this.itemDeck = new ArrayList<ItemCard>();
