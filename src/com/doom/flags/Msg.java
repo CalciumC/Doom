@@ -28,5 +28,6 @@ public class Msg {
 	public final static String MSG_REVEAL_TEAM = "> This is a game of team sprit. Team players won the game.";
 	public final static String MSG_REVEAL_BOSS = "> BOSS ENCOUNTER!! {0} appears. Attack: {1}, HP: {2}, Special: {3}. Good luck!";
 	
+	public final static String MSG_FULL = "> Current Game is full. Please try again later.";
 	
 }

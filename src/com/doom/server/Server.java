@@ -2,6 +2,7 @@ package com.doom.server;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -16,7 +17,8 @@ public class Server{
 	
 	private final static int serverPort = UtilsFlags.SERVER_PORT;
 	private final static int maxClientCount = GameFlags.PLAYER_MAX_COUNT;
-
+	
+	private final static ClientThread[] threads = new ClientThread[maxClientCount];
 	
 	public static void main(String[] args){
 		
@@ -30,11 +32,21 @@ public class Server{
 		while(true){
 			try {
 				socket = server.accept();
-				
-				for(int i = 0; i < maxClientCount; i++){
-					
-					
+				int i = 0;
+				for(i = 0; i < maxClientCount; i++){
+					if(threads[i] == null){
+						(threads[i] = new ClientThread(socket, threads)).start();
+						break;
+					}
 				}
+				
+				if(i == maxClientCount){
+					PrintStream os = new PrintStream(socket.getOutputStream());
+					os.println("Game is full.");
+					os.close();
+					socket.close();
+				}
+				
 				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block

@@ -16,6 +16,7 @@ public class ClientThread extends Thread {
 	private Socket clientSocket = null;
 	private final ClientThread[] threads;
 	private int maxClientCount;
+	private Player me;
 	
 	private Common c = Common.getInstance();
 	
@@ -36,10 +37,11 @@ public class ClientThread extends Thread {
 			Game game = Game.getInstance();
 			os.println("Enter a name for yourself: ");
 			String playerName = is.readUTF().trim();
-			game.addPlayer(new Player(playerName));
+			me = new Player(playerName);
+			game.addPlayer(me);
 			for(int i = 0; i < maxClientCount; i++){
 				if(threads[i] != null && threads[i] != this){
-					os.println();
+					threads[i].os.println(playerName+" is joined.");
 				}
 				
 			}
